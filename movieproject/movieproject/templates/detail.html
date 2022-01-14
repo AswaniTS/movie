@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Details</title>
+
+</head>
+<body>
+{% block body %}
+<nav class="navbar navbar-light bg-light">
+  <span class="navbar-brand mb-0 h1">
+      <div class="container">
+          <div class="row">
+              <div class="col-md-6">
+                  <img src="{{movie1.img.url}}" width="300" height="300">
+              </div>
+
+            <div class="col-md-6">
+                <b style="color:red;">{{movie1.name}}</b>
+     <h5><i>{{movie1.desc}}</i></h5>
+                <i>Release year is {{movie1.year}}</i>
+                <div>
+    <a class="btn btn-warning" href="{% url 'movieapp:update' movie1.id %}">update</a>
+      <a class="btn btn-danger" href="{% url 'movieapp:delete' movie1.id %}">Delete</a>
+                </div>
+                </div>
+   </div>
+
+      </div>
+{% endblock %}
+   </span>
+</nav>
+</body>
+</html>
